@@ -334,8 +334,8 @@ func newCommand(cmdStr string, timeout time.Duration, opts Opts) *Command {
 // Exec performs the actual command execution
 func (c *Command) Exec() {
 	// TODO REPORT error, track std streams
-	c.logger.Debugf("/bin/bash -c %s", c.Cmd)
-	c.logger.Debug(exec.Command("/bin/bash", "-c", c.Cmd).Run())
+	c.logger.Debugf("/bin/sh -c %s", c.Cmd)
+	c.logger.Debug(exec.Command("/bin/sh", "-c", c.Cmd).Run())
 }
 
 func formatColumns(len int, args ...interface{}) string {
